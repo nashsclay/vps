@@ -8,14 +8,6 @@ If this script helped you in any way, please contribute some feedback. BTC donat
 
 **Have fun, this is crypto after all!**
 
-```
-BTC  33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3
-```
-
-
-Feel free to use my reflink to signup and receive a bonus w/ vultr:
-<a href="https://www.vultr.com/?ref=6903922"><img src="https://www.vultr.com/media/banner_2.png" width="468" height="60"></a>
-
 ## Supported masternode projects
 
 The ever growing list of supported projects is now maintained at [https://nodemaster-vps.com/supported-masternode-projects/](https://nodemaster-vps.com/supported-masternode-projects/).
@@ -185,5 +177,5 @@ Ping me at contact@marsmenschen.com for questions and send some crypto my way if
 **Have fun, this is crypto after all!**
 
 ```
-BTC  33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3
+Original Creator: BTC  33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3
 ```
