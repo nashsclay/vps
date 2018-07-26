@@ -172,7 +172,7 @@ The management script release will follow within the next couple of days.
 
 * currently not fully idempotent
 
-Ping me at contact@marsmenschen.com for questions and send some crypto my way if you are happy.
+DM me at nashsclay#6809 for questions and send some crypto my way if you are happy.
 
 **Have fun, this is crypto after all!**
 
