@@ -140,13 +140,6 @@ I activated the "[issues](https://github.com/masternodes/vps/issues)" option on 
 
 I might not be able to reply immediately, but i do usually within a couple of days at worst. I will also happily take any pull requests that make masternode installations easier for everyone ;-)
 
-If this script helped you in any way, please contribute some feedback. BTC donations also welcome and never forget:
-
-**Have fun, this is crypto after all!**
-
-```
-BTC  33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3
-```
 
 ## Management script (not yet implemented)
 
@@ -160,13 +153,6 @@ The management script release will follow within the next couple of days.
 | nodemaster cleanup pivx (all\|number) | delete chain data for all pivx masternodes   |
 | nodemaster status pivx (all\|number)  | systemd process status for a pivx masternode |
 | nodemaster tail pivx (all\|number)    | tail debug logs for a pivx masternode        |
-
-# Todo
-
-* provide my Dockerfile & Vagrantfile
-* write more test cases
-* implement a binary option (?)
-* output all supported cryptos as list within help
 
 # Errors
 
