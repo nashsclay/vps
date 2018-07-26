@@ -1,4 +1,4 @@
-# Nodemaster - A fork from https://github.com/masternodes/vps/
+# Nashsclay's Masternode Master Script (Nodemaster) - A fork from https://github.com/masternodes/vps/
 
 The **Nodemaster** scripts is a collection of utilities to manage, setup and update masternode instances.
 
