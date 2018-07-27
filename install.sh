@@ -75,7 +75,7 @@ function show_help(){
     showbanner
     echo "install.sh, version $SCRIPT_VERSION";
     echo "Usage example:";
-    echo "install.sh (-p|--project) string [(-h|--help)] [(-n|--net) int] [(-c|--count) int] [(-r|--release) string] [(-w|--wipe)] [(-u|--update)] [(-x|--startnodes)]";
+    echo "install.sh (-p|--project) string [(-h|--help)] [(-n|--net) int] [(-c|--count) int] [(-r|--release) string] [(-w|--wipe)] [(-u|--update)] [(-x|--startnodes)] [(-a|--all)]";
     echo "Options:";
     echo "-h or --help: Displays this information.";
     echo "-p or --project string: Project to be installed. REQUIRED.";
@@ -88,6 +88,13 @@ function show_help(){
     echo "-x or --startnodes: Start masternodes after installation to sync with blockchain";
 	echo "-a or --all: List the currect supported projects";
     exit 1;
+}
+
+function show_projects(){
+clear
+showbanner
+
+exit 1;
 }
 
 #
@@ -748,6 +755,7 @@ debug=0;
 update=0;
 sentinel=0;
 startnodes=0;
+all=0;
 
 # Execute getopt
 ARGS=$(getopt -o "hp:n:c:r:wsudx:a" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,all" -n "install.sh" -- "$@");
@@ -838,9 +846,7 @@ fi
 
 # Check required arguments
 if [ "$all" -eq 1 ]; then
-    echo "TEST TEST TEST"
-	read -p "STOP"
-	#ls -d ./config
+    show_projects;
 fi
 
 # Check required arguments
