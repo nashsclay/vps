@@ -748,10 +748,10 @@ debug=0;
 update=0;
 sentinel=0;
 startnodes=0;
-listprojects=0;
+list=0;
 
 # Execute getopt
-ARGS=$(getopt -o "hp:n:c:r:wsudx" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,listprojects" -n "install.sh" -- "$@");
+ARGS=$(getopt -o "hp:n:c:r:wsudx" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,list" -n "install.sh" -- "$@");
 
 #Bad arguments
 if [ $? -ne 0 ];
@@ -822,7 +822,7 @@ while true; do
             ;;
 		-l|--list)
 			shift;
-					listprojects="1";
+			list;
 			;;
         --)
             shift;
@@ -838,9 +838,9 @@ then
 fi
 
 # Check required arguments
-if [ "$listprojects" -eq 1 ]; then
+if [ "$list" ]
+then
     ls -d ./config
-    exit 0
 fi
 
 # Check required arguments
