@@ -106,6 +106,7 @@ The _install.sh_ script support the following parameters:
 | --wipe       | -w           | --                  | uninstall & wipe all related master node data, combine with -p flag |
 | --help       | -h           | --                  | print help info                                                     |
 | --startnodes | -x           | --                  | starts masternode(s) after installation                             |
+| --list       | -l           | --                  | lists current supported projects                                    |
 
 ## Troubleshooting the masternode on the VPS
 
