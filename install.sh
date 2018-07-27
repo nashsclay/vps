@@ -7,7 +7,7 @@
 #  ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 #                                                              ╚╗ @marsmensch 2016-2018 ╔╝
 #
-# version 	v0.9.9
+# version 	v1.0.0
 # date    	2018-06-09
 #
 # function:	part of the masternode scripts, source the proper config file
@@ -26,7 +26,7 @@ declare -r CRYPTOS=`ls -l config/ | egrep '^d' | awk '{print $9}' | xargs echo -
 declare -r DATE_STAMP="$(date +%y-%m-%d-%s)"
 declare -r SCRIPTPATH=$( cd $(dirname ${BASH_SOURCE[0]}) > /dev/null; pwd -P )
 declare -r MASTERPATH="$(dirname "${SCRIPTPATH}")"
-declare -r SCRIPT_VERSION="v0.9.9"
+declare -r SCRIPT_VERSION="v1.0.0"
 declare -r SCRIPT_LOGFILE="/tmp/nodemaster_${DATE_STAMP}_out.log"
 declare -r IPV4_DOC_LINK="https://www.vultr.com/docs/add-secondary-ipv4-address"
 declare -r DO_NET_CONF="/etc/network/interfaces.d/50-cloud-init.cfg"
@@ -44,8 +44,9 @@ cat << "EOF"
 EOF
 echo "$(tput sgr0)$(tput setaf 3)Have fun, this is crypto after all!$(tput sgr0)"
 echo "$(tput setaf 6)Original Dev Donations (BTC): 33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3"
-echo "Questions: nashsclay#6809"
+echo "Questions: DM nashsclay#6809 on Discord"
 echo "Forked, updated just for you by nashsclay."
+echo
 }
 
 # /*
@@ -747,9 +748,10 @@ debug=0;
 update=0;
 sentinel=0;
 startnodes=0;
+listprojects=0;
 
 # Execute getopt
-ARGS=$(getopt -o "hp:n:c:r:wsudx" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes" -n "install.sh" -- "$@");
+ARGS=$(getopt -o "hp:n:c:r:wsudx" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,listprojects" -n "install.sh" -- "$@");
 
 #Bad arguments
 if [ $? -ne 0 ];
@@ -818,7 +820,10 @@ while true; do
             shift;
                     startnodes="1";
             ;;
-
+		-l|--list)
+			shift;
+					listprojects="1";
+			;;
         --)
             shift;
             break;
@@ -830,6 +835,12 @@ done
 if [ -z "$project" ]
 then
     show_help;
+fi
+
+# Check required arguments
+if [ "$listprojects" -eq 1 ]; then
+    ls -d ./config
+    exit 0
 fi
 
 # Check required arguments
