@@ -43,8 +43,9 @@ cat << "EOF"
                                                              ╚╗ @marsmensch 2016-2018 ╔╝
 EOF
 echo "$(tput sgr0)$(tput setaf 3)Have fun, this is crypto after all!$(tput sgr0)"
-echo "$(tput setaf 6)Donations (BTC): 33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3"
-echo "Questions: marsmensch@protonmail.com$(tput sgr0)"
+echo "$(tput setaf 6)Original Dev Donations (BTC): 33ENWZ9RCYBG7nv6ac8KxBUSuQX64Hx3x3"
+echo "Questions: nashsclay#6809"
+echo "Forked, updated just for you by nashsclay."
 }
 
 # /*
@@ -83,8 +84,8 @@ function show_help(){
     echo "-s or --sentinel: Add sentinel monitoring for a node type. Combine with the -p option";
     echo "-w or --wipe: Wipe ALL local data for a node type. Combine with the -p option";
     echo "-u or --update: Update a specific masternode daemon. Combine with the -p option";
-    echo "-r or --release: Release version to be installed.";
     echo "-x or --startnodes: Start masternodes after installation to sync with blockchain";
+	echo "-l or --list: List the currect supported projects";
     exit 1;
 }
 
