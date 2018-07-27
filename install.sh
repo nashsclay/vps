@@ -86,7 +86,7 @@ function show_help(){
     echo "-w or --wipe: Wipe ALL local data for a node type. Combine with the -p option";
     echo "-u or --update: Update a specific masternode daemon. Combine with the -p option";
     echo "-x or --startnodes: Start masternodes after installation to sync with blockchain";
-	echo "-l or --list: List the currect supported projects";
+	echo "-a or --all: List the currect supported projects";
     exit 1;
 }
 
@@ -748,10 +748,9 @@ debug=0;
 update=0;
 sentinel=0;
 startnodes=0;
-list=0;
 
 # Execute getopt
-ARGS=$(getopt -o "hp:n:c:r:wsudx" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,list" -n "install.sh" -- "$@");
+ARGS=$(getopt -o "hp:n:c:r:wsudxa" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,all" -n "install.sh" -- "$@");
 
 #Bad arguments
 if [ $? -ne 0 ];
@@ -820,9 +819,9 @@ while true; do
             shift;
                     startnodes="1";
             ;;
-		-l|--list)
+		-a|--all)
 			shift;
-			list;
+			all;
 			;;
         --)
             shift;
@@ -838,7 +837,7 @@ then
 fi
 
 # Check required arguments
-if [ "$list" ]
+if [ "$all" ]
 then
     ls -d ./config
 fi
