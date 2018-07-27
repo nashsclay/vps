@@ -91,10 +91,10 @@ function show_help(){
 }
 
 function show_projects(){
-clear
-showbanner
-
-exit 1;
+	clear
+	showbanner
+	ls -d ./config
+	exit 1;
 }
 
 #
@@ -755,7 +755,6 @@ debug=0;
 update=0;
 sentinel=0;
 startnodes=0;
-all=0;
 
 # Execute getopt
 ARGS=$(getopt -o "hp:n:c:r:wsudx:a" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,all" -n "install.sh" -- "$@");
@@ -829,7 +828,7 @@ while true; do
             ;;
 		-a|--all)
 			shift;
-					all="1";
+			all;
 			;;
         --)
             shift;
@@ -845,7 +844,8 @@ then
 fi
 
 # Check required arguments
-if [ "$all" -eq 1 ]; then
+if [ -z "$all" ]
+then
     show_projects;
 fi
 
