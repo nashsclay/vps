@@ -90,13 +90,6 @@ function show_help(){
     exit 1;
 }
 
-function show_projects(){
-	clear
-	showbanner
-	ls -d ./config
-	exit 1;
-}
-
 #
 # /* no parameters, checks if we are running on a supported Ubuntu release */
 #
@@ -757,7 +750,7 @@ sentinel=0;
 startnodes=0;
 
 # Execute getopt
-ARGS=$(getopt -o "hp:n:c:r:wsudx:a" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes,all" -n "install.sh" -- "$@");
+ARGS=$(getopt -o "hp:n:c:r:wsudx" -l "help,project:,net:,count:,release:,wipe,sentinel,update,debug,startnodes" -n "install.sh" -- "$@");
 
 #Bad arguments
 if [ $? -ne 0 ];
@@ -826,10 +819,6 @@ while true; do
             shift;
                     startnodes="1";
             ;;
-		-a|--all)
-			shift;
-			all;
-			;;
         --)
             shift;
             break;
@@ -841,12 +830,6 @@ done
 if [ -z "$project" ]
 then
     show_help;
-fi
-
-# Check required arguments
-if [ -z "$all" ]
-then
-    show_projects;
 fi
 
 # Check required arguments
