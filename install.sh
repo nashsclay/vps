@@ -498,7 +498,7 @@ function source_config() {
             NETWORK_TYPE=4
             echo "WARNING:"
             echo "You selected IPv4 for networking but there is no automatic workflow for this part."
-            echo "This means you will have some mamual work to do to after this configuration run."
+            echo "This means you will have some manual work to do to after this configuration run."
             echo ""
             echo "See the following link for instructions how to add multiple ipv4 addresses on vultr:"
             echo "${IPV4_DOC_LINK}"
